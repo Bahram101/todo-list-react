@@ -1,0 +1,34 @@
+.btnDel{
+    margin-right: 5px;
+}
+
+.done{
+    text-decoration: line-through;
+}
+
+.important{
+    font-weight: bold;
+}
+
+.todo-list-item{
+    display:flex;
+    justify-content: space-between;
+}
+
+.todo-list-item.done .todo-list-item-label{
+    text-decoration: line-through;
+}
+
+.todo-list-item.important .todo-list-item-label{
+    font-weight: bold;
+    color: steelblue;
+}
+
+
+.todo-list-item-label{
+    cursor: pointer;
+    user-select: none;
+}
+
+
+
