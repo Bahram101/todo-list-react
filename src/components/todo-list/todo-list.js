@@ -1,25 +1,27 @@
 import React from 'react';
 import TodoListItem from '../todo-list-item/todo-list-item';
 
-const TodoList = ({todos, onDeleted}) => {
+const TodoList = ({todos, onDeleted, onToggleDone, onToggleImportant}) => {
 
     const elements = todos.map((item) => {
         const { id, ... itemProps } = item;
-
         return (
             <li key={item.id} className="list-group-item">
-                <TodoListItem {... itemProps} onDeleted={ ()=>{onDeleted(id)} } />
+                <TodoListItem 
+                    {... itemProps} 
+                    onDeleted={ ()=>{onDeleted(id)} } 
+                    onToggleDone={ () => onToggleDone(id) }
+                    onToggleImportant={ () => onToggleImportant(id) }
+                    />
             </li>
         )
     })
-
     
     return (
         <ul className="list-group">
             { elements }
         </ul>
     )
-
 }
 
 export default TodoList;
