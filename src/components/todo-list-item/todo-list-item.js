@@ -5,13 +5,13 @@ import PriorityHighIcon from '@material-ui/icons/PriorityHigh';
 
 
 const TodoListItem = (props) =>  {
-
+    
     const { label, onDeleted,
             onToggleDone,
             onToggleImportant,
             done,
             important } = props; 
-
+            
     let classNames = 'todo-list-item';
 
     if(done){

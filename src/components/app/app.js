@@ -57,7 +57,7 @@ export default class App extends Component {
     }
 
     toggleProperty(arr, id, propName){
-        // Выбираем id которое мы хотим удалить
+        // Выбираем index которое мы хотим удалить
         const idx = arr.findIndex((el) => el.id === id );
             
         //Обновляем объект 
@@ -65,11 +65,14 @@ export default class App extends Component {
         const newItem = {... oldItem, [propName]: !oldItem[propName]}
         
         //Создаем новый массив
-        return  [
+        const newArr = [
             ... arr.slice(0, idx),
             newItem,
             ... arr.slice(idx+1)
         ]
+
+        return  newArr;
+        
     }
 
     onToggleDone = (id) => {
@@ -88,6 +91,7 @@ export default class App extends Component {
         })
     }
 
+
     render(){
 
         const {todoData} = this.state;
@@ -98,7 +102,7 @@ export default class App extends Component {
 
         return (
             <div className="container">
-                <AppHeader todo={todoCount} done={doneCount}/>
+                <AppHeader todo={todoCount}  done={doneCount}/>
     
                 <div className="d-flex justify-content-between mb-3 ">                
                     <SearchPanel />
@@ -112,7 +116,7 @@ export default class App extends Component {
                     onToggleImportant = {this.onToggleImportant}
                 />
 
-                <AddItem onAddItem={this.addItem} />
+                <AddItem onAddItem={this.addItem}  />
             </div>
         )
     }    

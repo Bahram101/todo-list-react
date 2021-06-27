@@ -1,4 +1,13 @@
+.form{
+    display:flex;
+    margin-top:15px;
+    justify-content: space-between;
+}
+
+input{
+    margin-right: 15px;
+}
+
 .item-add{
-    text-align: right;
-    margin-top: 15px;
+    width:103px;
 }
